@@ -2,7 +2,7 @@ package ir.erfangharib.personal_finance_manager.Transactions;
 
 import ir.erfangharib.personal_finance_manager.Transactions.dto.TransactionRequestDto;
 import ir.erfangharib.personal_finance_manager.Transactions.dto.TransactionResponseDto;
-import ir.erfangharib.personal_finance_manager.Transactions.exceptions.TransactionNotFoundException;
+import ir.erfangharib.personal_finance_manager.exception.NotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
@@ -61,7 +61,7 @@ public class TransactionsService {
 
     private Transactions findTransactionById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new TransactionNotFoundException(id));
+                .orElseThrow(() -> new NotFoundException());
     }
 
     private List<TransactionResponseDto> mapToDtoList(List<Transactions> transactions) {
