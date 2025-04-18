@@ -3,7 +3,7 @@ package ir.erfangharib.personal_finance_manager.Transactions.dto;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 import ir.erfangharib.personal_finance_manager.Transactions.enums.*;
 
@@ -18,5 +18,5 @@ public class TransactionResponseDto {
     @Enumerated(EnumType.STRING)
     public Category category;
 
-    public LocalDateTime createdDate;
+    public Instant createdDate;
 }

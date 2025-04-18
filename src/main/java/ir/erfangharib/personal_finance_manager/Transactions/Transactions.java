@@ -1,14 +1,16 @@
 package ir.erfangharib.personal_finance_manager.Transactions;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import ir.erfangharib.personal_finance_manager.Transactions.enums.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "transactions")
 public class Transactions {
 
@@ -28,7 +30,7 @@ public class Transactions {
     private Category category;
 
     @CreationTimestamp
-    private LocalDateTime createdDate;
+    private Instant createdDate;
 
     public Long getId() {
         return id;
