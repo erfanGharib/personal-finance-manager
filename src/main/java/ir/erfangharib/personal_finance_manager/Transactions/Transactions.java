@@ -72,4 +72,6 @@ public class Transactions {
         this.category = category;
     }
 
+    public Instant getCreatedDate() { return createdDate; }
+
 }

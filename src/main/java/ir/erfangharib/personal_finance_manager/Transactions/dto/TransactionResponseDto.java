@@ -11,6 +11,7 @@ public class TransactionResponseDto {
     public Long id;
     public Integer amount;
     public String description;
+    public Instant createdDate;
 
     @Enumerated(EnumType.STRING)
     public Type type;
@@ -18,5 +19,4 @@ public class TransactionResponseDto {
     @Enumerated(EnumType.STRING)
     public Category category;
 
-    public Instant createdDate;
 }
